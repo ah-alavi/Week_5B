@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Meet Me In New York</title>
+  <style>
+    body {
+      background: black;
+      text-align: center;
+    }
+
+    .scene {
+      position: relative;
+      width: 736px;
+      margin: auto;
+    }
+
+    .scene img {
+      width: 100%;
+    }
+
+    #taxi {
+      position: absolute;
+      bottom: 70px;
+      left: 20px;
+      width: 150px;
+      transition: 5s;
+    }
+
+    .move {
+      transform: translateX(550px);
+    }
+  </style>
+</head>
+<body>
+
+  <h1 style="color:white; font-family: Arial, Helvetica, sans-serif;">Meet Me In New York</h1>
+
+  <div class="scene">
+    <img src="background.png" alt="city">
+    <img src="taxi.svg" id="taxi" alt="taxi">
+  </div>
+
+  <script>
+    let taxi = document.getElementById("taxi");
+
+    taxi.onclick = function() {
+      taxi.classList.add("move");
+      setTimeout(function(){
+        taxi.classList.remove("move");
+      }, 5000);
+    }
+  </script>
+
+</body>
+</html>
